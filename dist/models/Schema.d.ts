@@ -4,7 +4,7 @@ export declare const User: mongoose.Model<{
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
 }, {}, {}, {
     id: string;
 }, mongoose.Document<unknown, {}, {
@@ -12,41 +12,47 @@ export declare const User: mongoose.Model<{
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
 }, {
     id: string;
-}, mongoose.DefaultSchemaOptions> & Omit<{
+}, {
+    strict: false;
+}> & Omit<{
     name: string;
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }, "id"> & {
     id: string;
-}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
+}, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, {
+    strict: false;
+}, {
     name: string;
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
 }, mongoose.Document<unknown, {}, {
     name: string;
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
 }, {
     id: string;
-}, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
+}, mongoose.ResolveSchemaOptions<{
+    strict: false;
+}>> & Omit<{
     name: string;
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -61,15 +67,17 @@ export declare const User: mongoose.Model<{
         email: string;
         password: string;
         role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-        supervisorId?: any;
+        supervisorId?: mongoose.Types.ObjectId | null;
     }, {
         id: string;
-    }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
+    }, mongoose.ResolveSchemaOptions<{
+        strict: false;
+    }>> & Omit<{
         name: string;
         email: string;
         password: string;
         role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-        supervisorId?: any;
+        supervisorId?: mongoose.Types.ObjectId | null;
     } & {
         _id: mongoose.Types.ObjectId;
     } & {
@@ -77,48 +85,48 @@ export declare const User: mongoose.Model<{
     }, "id"> & {
         id: string;
     }> | undefined;
-}, mongoose.FlattenMaps<{
+}, {
     name: string;
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
-}> & {
+    supervisorId?: mongoose.Types.ObjectId | null;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}>, mongoose.FlattenMaps<{
+}>, {
     name: string;
     email: string;
     password: string;
     role?: "admin" | "supervisor" | "agent" | "candidate" | null;
-    supervisorId?: any;
-}> & {
+    supervisorId?: mongoose.Types.ObjectId | null;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;
 export declare const Conversation: mongoose.Model<{
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
 }, {}, {}, {
     id: string;
 }, mongoose.Document<unknown, {}, {
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
 }, {
     id: string;
 }, mongoose.DefaultSchemaOptions> & Omit<{
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
 } & {
     _id: mongoose.Types.ObjectId;
@@ -127,24 +135,24 @@ export declare const Conversation: mongoose.Model<{
 }, "id"> & {
     id: string;
 }, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
 }, mongoose.Document<unknown, {}, {
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
 }, {
     id: string;
 }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
-    supervisorId?: any;
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
 } & {
     _id: mongoose.Types.ObjectId;
@@ -156,18 +164,18 @@ export declare const Conversation: mongoose.Model<{
     [path: string]: mongoose.SchemaDefinitionProperty<undefined, any, any>;
 } | {
     [x: string]: mongoose.SchemaDefinitionProperty<any, any, mongoose.Document<unknown, {}, {
-        supervisorId?: any;
+        supervisorId?: mongoose.Types.ObjectId | null;
+        agentId?: mongoose.Types.ObjectId | null;
         createdAt?: NativeDate | null;
-        candidateId?: any;
-        agentId?: any;
+        candidateId?: mongoose.Types.ObjectId | null;
         status?: "open" | "assigned" | "closed" | null;
     }, {
         id: string;
     }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
-        supervisorId?: any;
+        supervisorId?: mongoose.Types.ObjectId | null;
+        agentId?: mongoose.Types.ObjectId | null;
         createdAt?: NativeDate | null;
-        candidateId?: any;
-        agentId?: any;
+        candidateId?: mongoose.Types.ObjectId | null;
         status?: "open" | "assigned" | "closed" | null;
     } & {
         _id: mongoose.Types.ObjectId;
@@ -176,47 +184,47 @@ export declare const Conversation: mongoose.Model<{
     }, "id"> & {
         id: string;
     }> | undefined;
-}, mongoose.FlattenMaps<{
-    supervisorId?: any;
+}, {
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
-}> & {
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}>, mongoose.FlattenMaps<{
-    supervisorId?: any;
+}>, {
+    supervisorId?: mongoose.Types.ObjectId | null;
+    agentId?: mongoose.Types.ObjectId | null;
     createdAt?: NativeDate | null;
-    candidateId?: any;
-    agentId?: any;
+    candidateId?: mongoose.Types.ObjectId | null;
     status?: "open" | "assigned" | "closed" | null;
-}> & {
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;
 export declare const MessageSchema: mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 }, mongoose.Document<unknown, {}, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 }, {
     id: string;
 }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -228,18 +236,18 @@ export declare const MessageSchema: mongoose.Schema<any, mongoose.Model<any, any
 } | {
     [x: string]: mongoose.SchemaDefinitionProperty<any, any, mongoose.Document<unknown, {}, {
         createdAt?: NativeDate | null;
-        conversationId?: any;
-        senderId?: any;
+        senderId?: mongoose.Types.ObjectId | null;
         senderRole?: string | null;
         content?: string | null;
+        conversationId?: mongoose.Types.ObjectId | null;
     }, {
         id: string;
     }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
         createdAt?: NativeDate | null;
-        conversationId?: any;
-        senderId?: any;
+        senderId?: mongoose.Types.ObjectId | null;
         senderRole?: string | null;
         content?: string | null;
+        conversationId?: mongoose.Types.ObjectId | null;
     } & {
         _id: mongoose.Types.ObjectId;
     } & {
@@ -247,39 +255,39 @@ export declare const MessageSchema: mongoose.Schema<any, mongoose.Model<any, any
     }, "id"> & {
         id: string;
     }> | undefined;
-}, mongoose.FlattenMaps<{
+}, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
-}> & {
+    conversationId?: mongoose.Types.ObjectId | null;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
 }>;
 export declare const Message: mongoose.Model<{
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 }, {}, {}, {
     id: string;
 }, mongoose.Document<unknown, {}, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 }, {
     id: string;
 }, mongoose.DefaultSchemaOptions> & Omit<{
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -288,24 +296,24 @@ export declare const Message: mongoose.Model<{
     id: string;
 }, mongoose.Schema<any, mongoose.Model<any, any, any, any, any, any, any>, {}, {}, {}, {}, mongoose.DefaultSchemaOptions, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 }, mongoose.Document<unknown, {}, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 }, {
     id: string;
 }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
+    conversationId?: mongoose.Types.ObjectId | null;
 } & {
     _id: mongoose.Types.ObjectId;
 } & {
@@ -317,18 +325,18 @@ export declare const Message: mongoose.Model<{
 } | {
     [x: string]: mongoose.SchemaDefinitionProperty<any, any, mongoose.Document<unknown, {}, {
         createdAt?: NativeDate | null;
-        conversationId?: any;
-        senderId?: any;
+        senderId?: mongoose.Types.ObjectId | null;
         senderRole?: string | null;
         content?: string | null;
+        conversationId?: mongoose.Types.ObjectId | null;
     }, {
         id: string;
     }, mongoose.ResolveSchemaOptions<mongoose.DefaultSchemaOptions>> & Omit<{
         createdAt?: NativeDate | null;
-        conversationId?: any;
-        senderId?: any;
+        senderId?: mongoose.Types.ObjectId | null;
         senderRole?: string | null;
         content?: string | null;
+        conversationId?: mongoose.Types.ObjectId | null;
     } & {
         _id: mongoose.Types.ObjectId;
     } & {
@@ -336,23 +344,23 @@ export declare const Message: mongoose.Model<{
     }, "id"> & {
         id: string;
     }> | undefined;
-}, mongoose.FlattenMaps<{
+}, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
-}> & {
+    conversationId?: mongoose.Types.ObjectId | null;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;
-}>, mongoose.FlattenMaps<{
+}>, {
     createdAt?: NativeDate | null;
-    conversationId?: any;
-    senderId?: any;
+    senderId?: mongoose.Types.ObjectId | null;
     senderRole?: string | null;
     content?: string | null;
-}> & {
+    conversationId?: mongoose.Types.ObjectId | null;
+} & {
     _id: mongoose.Types.ObjectId;
 } & {
     __v: number;

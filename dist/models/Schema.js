@@ -20,15 +20,19 @@ const UserSchema = new Schema({
         enum: ["admin", "supervisor", "agent", "candidate"],
     },
     supervisorId: {
-        type: mongoose.Types.ObjectId || null,
+        type: mongoose.Types.ObjectId,
+        ref: "user",
+        default: null,
+        required: false,
     },
-});
+}, { strict: false });
 export const User = mongoose.model("user", UserSchema);
 const ConversationSchema = new Schema({
     candidateId: {
         type: mongoose.Types.ObjectId,
+        ref: "user",
     },
-    agentId: mongoose.Types.ObjectId || null,
+    agentId: mongoose.Types.ObjectId,
     supervisorId: mongoose.Types.ObjectId,
     status: {
         type: String,
@@ -38,7 +42,10 @@ const ConversationSchema = new Schema({
 });
 export const Conversation = mongoose.model("conversation", ConversationSchema);
 export const MessageSchema = new Schema({
-    conversationId: mongoose.Types.ObjectId,
+    conversationId: {
+        type: mongoose.Types.ObjectId,
+        ref: "conversation",
+    },
     senderId: mongoose.Types.ObjectId,
     senderRole: String,
     content: String,

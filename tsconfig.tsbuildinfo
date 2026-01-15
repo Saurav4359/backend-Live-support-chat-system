@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/models/schema.ts","./src/util/error.ts"],"version":"5.9.3"}
+{"root":["./src/index.ts","./src/lib/config.ts","./src/models/schema.ts","./src/util/validation.ts"],"version":"5.9.3"}

@@ -3,36 +3,43 @@ import { required } from "zod/mini";
 
 const Schema = mongoose.Schema;
 
-const UserSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
+const UserSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    role: {
+      type: String,
+      enum: ["admin", "supervisor", "agent", "candidate"],
+    },
+    supervisorId: {
+      type: mongoose.Types.ObjectId,
+      ref: "user",
+      default: null,
+      required: false,
+    },
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  role: {
-    type: String,
-    enum: ["admin", "supervisor", "agent", "candidate"],
-  },
-  supervisorId: {
-    type: mongoose.Types.ObjectId || null,
-  },
-});
+  { strict: false }
+);
 
 export const User = mongoose.model("user", UserSchema);
 
 const ConversationSchema = new Schema({
   candidateId: {
     type: mongoose.Types.ObjectId,
+    ref: "user",
   },
-  agentId: mongoose.Types.ObjectId || null,
+  agentId: mongoose.Types.ObjectId,
   supervisorId: mongoose.Types.ObjectId,
   status: {
     type: String,
@@ -44,7 +51,10 @@ const ConversationSchema = new Schema({
 export const Conversation = mongoose.model("conversation", ConversationSchema);
 
 export const MessageSchema = new Schema({
-  conversationId: mongoose.Types.ObjectId,
+  conversationId: {
+    type: mongoose.Types.ObjectId,
+    ref: "conversation",
+  },
   senderId: mongoose.Types.ObjectId,
   senderRole: String,
   content: String,
